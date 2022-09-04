@@ -1,0 +1,100 @@
+<html>
+<head>
+    <title>Register</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style>
+    body{
+        background-color: #ededed;
+    }
+
+    input{
+        border-radius: 8px !important;
+    height: 7% !important;
+    width: 150% !important;
+    }
+
+    h1{
+        font-size: 4.1em !important;
+    }
+    #top{
+        height:30%;
+        width:85%;
+
+    }
+    a{
+        text-decoration: none !important;
+        color: black;
+        padding:26px;
+    }
+    form{
+        width: 20%;
+    margin-left: 11%;
+    margin-top: 0%;
+    }
+</style>
+<body>
+    <div class="container-fluid" id="top">
+        {% load static %}
+        <a href='/home'><img src="{% static 'courses/top_hat.png' %}" style="width:10%" alt='No image found' ></a>
+        <a href='/home' style='margin-left:48px'>Home</a>
+        <a href='/pricing'>Pricing</a>
+        <a href='/courses/none'>Courses</a>
+        <a href='/contact'>Contact & Info</a>
+        <a href='/login' style="margin-left:297px">Log in</a>
+        <button class='btn btn-primary' style='margin-right: 25px;
+        padding: 12px;
+        border-radius: 6px;'><a href='/register' style="color:white">Sign up</a></button>
+        
+    </div>
+<form action="/courses/none" method="post">
+    {% csrf_token %}
+    <div class="container-fluid" style="width: 100% !important; margin-top:0">
+        <div class="form-group">
+            <label>Username</label>
+            {{form.username}}
+        </div>
+        <div class="form-group">
+            <label>Email </label>
+            {{form.email}}
+        </div>
+        <div class="form-group">
+            <label>Password </label>
+            {{form.password1}}
+        </div>
+        <div class="form-group">
+            <label>Confirm password </label>
+            {{form.password2}}
+        </div>
+        <div class="form-group" style='display:flex;'>
+            <label>Are you a teacher?</label>
+            {{form.is_teacher}}
+
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="    width: 149%;
+        border-radius: 8px;" value="Create">Register</button>
+        <input type="hidden" name="Register" id="create">
+    </div>
+    <br>
+    <br>
+    <p style='padding-left:19px'>Already have an account?</p>
+    <a href='/login' style='padding-left:19px;'>Log in</a>
+
+</form>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js"></script>
+    <script type="text/javascript">
+        var elem = document.getElementsByTagName("input");
+        
+
+        for(var i = 0; i < elem.length; i++){
+            elem[i].classList.add('form-control');
+        }
+    </script>
+</html>

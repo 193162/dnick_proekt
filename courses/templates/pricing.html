@@ -1,0 +1,195 @@
+<html>
+<head>
+    <title>Pricing</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style>
+    ul{
+        list-style: none;
+    }
+    body{
+        background-color: #ededed;
+    }
+    h1{
+        margin-left: 43%;
+    margin-right: 25%;
+    }
+    .card{
+        transition: all .2s ease-in-out;
+    }
+    .card:hover{
+        transform: scale(1.1);
+        z-index: 32;
+        box-shadow: 1px 1px 5px 5px lightgrey;
+    }
+    .card h2{
+        font-size: 76px;
+    text-align: center;
+    }
+    .card a{
+        border-radius: 8px;
+    width: 100%;
+    margin-left: 5px;
+    margin-right: 5px;
+    }
+    h4{
+        font-weight: 400;
+        margin-left: 38%;
+    margin-right: 32%;
+        color:#3b3b3b;
+    }
+    #top{
+        height:30%;
+        width:85%;
+
+    }
+    a{
+        text-decoration: none !important;
+        color: black;
+        padding:26px;
+    }
+</style>
+<body>
+    <div class="container-fluid" id="top">
+    {% load static %}
+    <a href='/home'><img src="{% static 'courses/top_hat.png' %}" style="width:10%" alt='No image found' ></a>
+    <a href='/home' style='margin-left:48px'>Home</a>
+    <a href='/pricing' style="color:#3164f4; ">Pricing</a>
+    <a href='/courses/none'>Courses</a>
+    <a href='/contact'>Contact & Info</a>
+    <a href='/login' style="margin-left:297px">Log in</a>
+    <button class='btn btn-primary' style='margin-right: 25px;
+    padding: 12px;
+    border-radius: 6px;'><a href='/register' style="color:white">Sign up</a></button>
+    
+    </div>
+    <h1>Supscriptions</h1>
+    <h4>Our pricing is not expensive, but it's not 
+        cheap either, it's exactly what it should be</h4>
+    <br>
+    <br>
+    <br>
+    <div style="display: flex;margin-left:15%;margin-right:15%;">
+        <div class="card" style="margin-right:5px;border-radius:8px;width:33.33%">
+            <div class="card-body">
+              <h5 class="card-title">Basic</h5>
+              <h2 style="margin-right: 40%;">Free</h2>
+              <br>
+              <ul class="card-text" style="padding:0">
+                  <li>
+                      -Limited watch time to 1 hour a day
+                  </li>
+                  <li>
+                      -No Materials and Exercises
+                  </li>
+              </ul>
+              <br>
+              <br>
+              <a href="/courses/BASIC" class="btn btn-primary">Get started with Basic</a>
+            </div>
+          </div>
+          <div class="card" style="margin-right:5px;border-radius:8px;width:33.33%">
+            <div class="card-body">
+              <h5 class="card-title">Standard</h5>
+              <div style="display: flex;">
+              <span style="    font-weight: bold;
+              font-size: 30px;
+              margin-top: 11px;">$</span><h2 >15.99</h2><span style="margin-top:55px">/month</span>
+              </div>
+              <br>
+              <ul class="card-text" style="padding:0">
+                <li>
+                    +Materials and Exercises for all courses
+                </li>
+                <li>
+                    +One-on-one consultations with professors
+                </li>
+            </ul>
+            <br>
+              <a href="/courses/STANDARD" class="btn btn-primary">Get started with Standard</a>
+            </div>
+          </div>
+          <div class="card" style="margin-right:5px;border-radius:8px;width:33.33%">
+            <div class="card-body">
+              <h5 class="card-title">Standard plus</h5>
+              <div style="display: flex;">
+              <span style="    font-weight: bold;
+              font-size: 30px;
+              margin-top: 11px;">$</span><h2>29.99</h2><span style="margin-top:55px">/month</span>
+              </div>
+              <br>
+              <ul class="card-text" style="padding:0">
+                <li>
+                    +No ads
+                </li>
+              </ul>
+              <br>
+              <br>
+              <br>
+              <a href="/courses/STANDARD_PLUS" class="btn btn-primary">Get started with Standard Plus</a>
+            </div>
+          </div>
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <h2 style="margin-left:15%">Compare features</h2>
+    <br>
+    <div style="display: flex;">
+        <h2 style="margin-left:15%">
+            Free
+        </h2>
+        <h2 style="margin-left:20%">
+            Standard
+        </h2>
+        <h2 style="margin-left:20%">
+            Standard plus
+        </h2>
+    </div>
+    <hr style="width:70%">
+    <div style='display: flex;'>
+    <ul style='
+    width: 25%;
+    margin-left: 12%;'>
+        <li>
+            {% load static %}
+            <img src="{% static 'courses/check.png' %}" style="width:10%" alt='No image found' > Enrolling in all countries
+        </li>
+        <li>
+            {% load static %}
+            <img src="{% static 'courses/check.png' %}" style="width:10%" alt='No image found' > 1 hour watchtime/day
+        </li>
+    </ul>
+    <ul style='
+    width: 25%;
+    padding-left: 25px;
+'>
+        <li>
+            {% load static %}
+            <img src="{% static 'courses/check.png' %}" style="width:10%" alt='No image found' > Unlimited watchtime
+        </li>
+        <li>
+            {% load static %}
+            <img src="{% static 'courses/check.png' %}" style="width:10%" alt='No image found' > Materials and exercises
+        </li>
+        <li>
+            {% load static %}
+            <img src="{% static 'courses/check.png' %}" style="width:10%" alt='No image found' > Consulting professors
+        </li>
+    </ul>
+    <ul style='width: 25%;
+    padding-left: 85px;'>
+        <li>
+            {% load static %}
+            <img src="{% static 'courses/check.png' %}" style="width:10%" alt='No image found' > No ads
+        </li>
+
+    </ul>
+    </div>
+    
+</body>
+</html>
